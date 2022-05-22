@@ -1,6 +1,6 @@
 @Entry
 @Component
-struct Index {
+struct Home {
   @State text: string = '';
   grid_scroll: Scroller = new Scroller();
 
@@ -15,7 +15,7 @@ struct Index {
       .margin({ right: 5 })
       .width("90%")
       .padding({ top: 20 });
-      
+
       Column() {
         Text('Discover \nour new items.').fontSize(20).fontWeight(FontWeight.Bold)
       }.alignItems(HorizontalAlign.Start).width("90%").margin({ top: 10 })
@@ -56,7 +56,7 @@ struct Index {
       .backgroundColor("#fff0f5")
       .borderRadius(10)
       .height(95)
-      .margin({ bottom: 18 });
+      .margin({ bottom: 10 });
 
       // categories of products
       Column() {
@@ -65,18 +65,27 @@ struct Index {
 
       Flex({ justifyContent: FlexAlign.SpaceBetween }) {
         Button("Shoes", { type: ButtonType.Capsule, stateEffect: true })
-          .borderColor(Color.Black)
+          .borderColor(Color.Gray)
           .backgroundColor("#B57EDC")
+          .borderWidth(1)
+          .borderRadius(10)
+
         Button("Caps", { type: ButtonType.Capsule, stateEffect: true })
           .backgroundColor("#CCCCFF")
-          .fontColor(Color.Black);
+          .borderWidth(1)
+          .borderRadius(10)
+          .fontColor(Color.Gray);
         Button("Watch", { type: ButtonType.Capsule, stateEffect: true })
           .backgroundColor("#CCCCFF")
-          .fontColor(Color.Black);
+          .borderWidth(1)
+          .borderRadius(10)
+          .fontColor(Color.Gray);
         Button("Sofa", { type: ButtonType.Capsule, stateEffect: true })
           .backgroundColor("#CCCCFF")
-          .fontColor(Color.Black);
-      }.width("90%")
+          .borderWidth(1)
+          .borderRadius(10)
+          .fontColor(Color.Gray);
+      }.width("90%").margin({bottom:10})
 
       Flex({ justifyContent: FlexAlign.SpaceBetween }) {
         Text("Popular products").fontWeight(FontWeight.Bold).fontSize(20);
