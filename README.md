@@ -11,10 +11,13 @@
 
 # Detail_page
 
-![detail_page](https://user-images.githubusercontent.com/84433855/169695236-bbe431f5-905b-4a4f-b061-39d61f72a5f2.png)
+![detail_page](https://user-images.githubusercontent.com/84433855/169696581-ffbc7bfa-a559-4288-aee6-a6df118b8fac.png)
 
 # Filter_page
 
-![filter_page](https://user-images.githubusercontent.com/84433855/169696275-4ad0e604-49c3-4386-b2b0-0c913ef1102b.png)
+![filter_page](https://user-images.githubusercontent.com/84433855/169696598-2cd329f9-571b-42cd-9cfe-b0d7dcf0a42f.png)
+
+
+
 
 
