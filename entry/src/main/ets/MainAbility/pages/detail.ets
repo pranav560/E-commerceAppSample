@@ -2,7 +2,7 @@
 @Component
 struct Detail {
   @State counts: number = 1
-  @State value: number = 0
+  @State value: number = 1
 
   build() {
     Column({ space: 10 }) {
@@ -25,7 +25,7 @@ struct Detail {
           Row({ space: 5 }) {
             Image($r("app.media.star")).width(25).height(25).borderRadius(10);
             Text("4.7").fontWeight(FontWeight.Bold).fontSize(20);
-          }.padding({top:4})
+          }.padding({ top: 4 })
 
           Text("202 reviews").fontSize(12);
         }
@@ -47,13 +47,13 @@ struct Detail {
 
       //product description
       Column() {
-      Text("Nike shoes provide excellent support – Nike shoes comes with a herringbone pattern and a solid rubber, which adds to the comfort and support of users. – Nike shoes are lightweight and durable – Despite provides exceptional comfort, flexibility, of Nike shoes are very light.")
-        .textOverflow({ overflow: TextOverflow.Ellipsis })
-        .fontSize(15)
-        .textAlign(TextAlign.Start)
-        .maxLines(4)
-        .fontSize(17)
-        .fontColor(Color.Gray)
+        Text("Nike shoes provide excellent support – Nike shoes comes with a herringbone pattern and a solid rubber, which adds to the comfort and support of users. – Nike shoes are lightweight and durable – Despite provides exceptional comfort, flexibility, of Nike shoes are very light.")
+          .textOverflow({ overflow: TextOverflow.Ellipsis })
+          .fontSize(15)
+          .textAlign(TextAlign.Start)
+          .maxLines(4)
+          .fontSize(17)
+          .fontColor(Color.Gray)
       }.alignItems(HorizontalAlign.Start).width('90%')
 
 
@@ -64,14 +64,6 @@ struct Detail {
       Flex({ justifyContent: FlexAlign.SpaceBetween, alignItems: ItemAlign.Center }) {
         Text("Color:").fontSize(20);
         Column() {
-          Radio({ group: "Color", value: "red" })
-            .borderColor(Color.Red)
-            .borderRadius(30)
-            .borderWidth(4);
-          Text("Red").fontColor(Color.Red).fontSize(13)
-         }
-
-        Column() {
           Radio({ group: "Color", value: "Blue" })
             .borderColor(Color.Blue)
             .borderRadius(30)
@@ -81,10 +73,17 @@ struct Detail {
         }
 
         Column() {
-          Radio({ group: "Color", value: "Green" })
-            .borderColor(Color.Green)
+          Radio({ group: "Color", value: "red" })
+            .borderColor(Color.Red)
             .borderRadius(30)
             .borderWidth(4);
+          Text("Red").fontColor(Color.Red).fontSize(13)
+        }
+
+        Column() {
+          Radio({ group: "Color", value: "Green" })
+            .borderColor(Color.Green)
+            .borderRadius(30).borderWidth(4);
           Text("Green").fontColor(Color.Green).fontSize(13)
         }
 
@@ -100,7 +99,7 @@ struct Detail {
       }.width("90%")
 
 
-      Text('Available Sizes').fontSize(20).fontColor(0x000000).width('90%').margin({top:10})
+      Text('Available Sizes').fontSize(20).fontColor(0x000000).width('90%').margin({ top: 10 })
 
       Row({ space: 9 }) {
         Button({ type: ButtonType.Normal, stateEffect: true }) {
@@ -147,24 +146,36 @@ struct Detail {
       .width('90%')
       .padding(10)
       .backgroundColor("#ffffff")
+
       Blank();
 
       // fav and add_to_cart
       Flex({ justifyContent: FlexAlign.SpaceAround }) {
-        Button({ type: ButtonType.Capsule, stateEffect: true }) {
-          Image($r("app.media.fav")).padding(5).width(50).height(50).borderRadius(25);
+
+        Row() {
+          Text("Add to\nFavourite  ").fontSize(15);
+          Button({ type: ButtonType.Capsule, stateEffect: true }) {
+            Image($r("app.media.fav")).padding(5).width(50).height(50).borderRadius(25);
+          }
+          .width(55)
+          .height(50)
+          .borderWidth(3)
+          .backgroundColor(Color.White)
+          .borderRadius(5)
+          .borderColor(Color.Gray)
+          .opacity(0.9);
         }
-        .width(65)
-        .height(60)
+        .backgroundColor("#E7FEFF")
+        .padding(10)
         .borderWidth(3)
-        .backgroundColor(Color.White)
-        .borderRadius(5)
         .borderColor(Color.Gray)
-        .opacity(0.9);
+        .borderRadius(10);
         Row() {
           Text("Add to cart  ").fontSize(15);
           Image($r("app.media.cart")).objectFit(ImageFit.Cover).width(30).height(40);
-        }.backgroundColor("#E7FEFF").padding(10)
+        }
+        .backgroundColor("#E7FEFF")
+        .padding(10)
         .borderWidth(3)
         .borderColor(Color.Gray)
         .borderRadius(10);
