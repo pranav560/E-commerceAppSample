@@ -7,25 +7,25 @@ struct Index {
 
   build() {
     Column({ space: 7 }) {
-
-
+      //user icon row
       Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.SpaceBetween }) {
-        Image($r("app.media.menu")).width(45).height(45).borderRadius(3);
-        Image($r("app.media.user_image")).width(45).height(45).borderRadius(10);
+        Image($r("app.media.icon")).width(45).height(45).borderRadius(3);
+        Image($r("app.media.user_image")).width(45).height(45).borderRadius(14);
       }
       .margin({left:5})
       .margin({right:5})
       .width("90%")
       .padding({ top: 20 });
 
+
       Column(){
       Text('Discover \nour new items.').fontSize(20).fontWeight(FontWeight.Bold)
-      }.alignItems(HorizontalAlign.Start).width("90%")
+      }.alignItems(HorizontalAlign.Start).width("90%").margin({top:10})
 
-      //search
+      //search & filter
       Flex({ justifyContent: FlexAlign.SpaceAround }) {
         TextArea({ placeholder: 'Search.....' })
-          .width(250)
+          .width(270)
           .height(50)
           .fontSize(20)
           .fontStyle(FontStyle.Italic)
@@ -40,20 +40,19 @@ struct Index {
         .backgroundColor("#ffffff")
         .borderRadius(5)
         .opacity(0.2);
-      }
+      }.margin({bottom:10})
 
-      // coming soon
+      // coming soon ...
       Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
         Image($r("app.media.shoes8")).width(70).height(70);
         Column() {
-          Text("Nike shoes blue variant").fontSize(15).fontWeight(FontWeight.Bold).width(100);
-          Text("Coming Soon...").fontSize(15).fontWeight(FontWeight.Bold).fontColor(Color.Red).width(100);
+          Text("Nike shoes blue variant").fontSize(18).fontWeight(FontWeight.Bold).width(120);
+          Text("Coming Soon...").fontSize(18).fontWeight(FontWeight.Bold).fontColor(Color.Red).width(120);
         }
-        .width(130)
 
         Column() {
-          Toggle({ type: ToggleType.Switch, isOn: false }).width(40).height(15);
-          Text("Notify Me").fontColor(Color.Gray).fontSize(13);
+          Toggle({ type: ToggleType.Switch, isOn: false }).width(50).height(20);
+          Text("Notify Me").fontColor(Color.Gray).fontSize(14);
 
         }
       }
@@ -200,7 +199,7 @@ struct Index {
         // navigation
         Column() {
           Button({ type: ButtonType.Normal, stateEffect: true }) {
-            Image($r("app.media.home")).objectFit(ImageFit.Cover).width(30).height(30);
+            Image($r("app.media.homenew")).objectFit(ImageFit.Cover).width(30).height(30);
           }.backgroundColor("#ffffff")
           .width(40).height(40);
           Text("Home").fontSize(15);
