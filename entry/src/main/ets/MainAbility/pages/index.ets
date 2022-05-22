@@ -65,7 +65,7 @@ struct Index {
 
       // categories
       Column(){
-      Text("Categories").fontSize(20).fontWeight(FontWeight.Bolder).margin({ bottom: 10 });
+      Text("Categories").fontSize(20).fontWeight(FontWeight.Bold).margin({ bottom: 10 });
       }.alignItems(HorizontalAlign.Start).width("90%")
       Flex({ justifyContent: FlexAlign.SpaceBetween }) {
         Button("Shoes", { type: ButtonType.Capsule, stateEffect: true })
@@ -82,9 +82,17 @@ struct Index {
           .fontColor(Color.Black);
       }.width("90%")
 
-      Column(){
-        Text("Categories").fontSize(20).fontWeight(FontWeight.Bolder).margin({ bottom: 10 });
-      }.alignItems(HorizontalAlign.Start).width("90%")
+      Flex({justifyContent: FlexAlign.SpaceBetween}) {
+        Text("Popular Now").fontWeight(FontWeight.Bold).fontSize(20);
+        Row({space: 3}) {
+          Text("View All").fontWeight(FontWeight.Bold).fontSize(20);
+          Button(" > ", { type: ButtonType.Capsule, stateEffect: true })
+          .padding(0)
+          .width(35)
+          .height(25)
+          .backgroundColor("#CCCCFF").fontColor(Color.Black);
+        }
+      }.width("90%")
 
       Grid(this.grid_scroller) {
         // item
@@ -103,8 +111,8 @@ struct Index {
         GridItem() {
           Column() {
             Image($r("app.media.shoes2")).objectFit(ImageFit.Cover).width(130).height(130);
-            Text("Premium Smartphone").fontWeight(FontWeight.Bolder).fontSize(12);
-            Text("₹ 25000").fontWeight(FontWeight.Bolder).fontSize(15);
+            Text("Running Unisex Shoes").fontWeight(FontWeight.Bolder).fontSize(12);
+            Text("₹ 2500").fontWeight(FontWeight.Bolder).fontSize(15);
           }
           .alignItems(HorizontalAlign.Start)
           .borderWidth(2)
@@ -115,7 +123,7 @@ struct Index {
         GridItem() {
           Column() {
             Image($r("app.media.shoes3")).objectFit(ImageFit.Cover).width(130).height(130);
-            Text("Ultra slim smartphone").fontWeight(FontWeight.Bolder).fontSize(12);
+            Text("Running Unisex Shoes").fontWeight(FontWeight.Bolder).fontSize(12);
             Text("₹ 20000").fontWeight(FontWeight.Bolder).fontSize(15);
           }
           .alignItems(HorizontalAlign.Start)
@@ -127,7 +135,7 @@ struct Index {
         GridItem() {
           Column() {
             Image($r("app.media.shoes4")).objectFit(ImageFit.Cover).width(130).height(130);
-            Text("Premium laptop").fontWeight(FontWeight.Bolder).fontSize(12);
+            Text("Running Unisex Shoes").fontWeight(FontWeight.Bolder).fontSize(12);
             Text("₹ 60000").fontWeight(FontWeight.Bolder).fontSize(15);
           }
           .alignItems(HorizontalAlign.Start)
